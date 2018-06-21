@@ -4,7 +4,7 @@ RUN chown -R www-data: /var/www
 
 RUN apt update && apt install -y wget unzip git libmagickwand-dev imagemagick && apt clean all
 
-RUN wget https://getcomposer.org/download/1.6.5/composer.phar -O /usr/bin/composer
+RUN wget https://getcomposer.org/download/1.6.5/composer.phar -O /usr/bin/composer && chmod +x /usr/bin/composer
 
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo_mysql
